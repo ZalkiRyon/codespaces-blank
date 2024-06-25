@@ -18,19 +18,21 @@ def menu_principal():
             op_menu_p = int(input("Elija una opción ->"))
             if op_menu_p == 1:
                 registro_user()
-            if op_menu_p == 2:    
+            elif op_menu_p == 2:    
                 if empleados == []:
                     print("No hay trabajadores registrados aún.")        
                 else:
                     lista_trabajadores()
-            if op_menu_p == 3:
+            elif op_menu_p == 3:
                 if empleados == []:
                     print("No hay trabajadores registrados aún.")
                 else:                              
                     planilla_sueldos()
-            if op_menu_p == 0:
+            elif op_menu_p == 0:
                 print("Gracias por usar nuestro sistema.")
                 break
+            else:
+                print("Opción no válida")
         except:
             print("Ingrese un valor valido")
 
@@ -102,9 +104,9 @@ def registro_user():
         empleados.append((nombre, cargo, sueldo_bruto, salud, afp, liquido))   
         if cargo == "ceo":
             list_ceo.append((nombre, cargo, sueldo_bruto, salud, afp, liquido))  
-        if cargo == "desarrollador":
+        elif cargo == "desarrollador":
             list_desarolla.append((nombre, cargo, sueldo_bruto, salud, afp, liquido))   
-        if cargo == "analista de datos":
+        elif cargo == "analista de datos":
             list_analista.append((nombre, cargo, sueldo_bruto, salud, afp, liquido))
         print("Trabajador registrado Correctamente")       
         break
